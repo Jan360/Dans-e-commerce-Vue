@@ -40,42 +40,39 @@
 </template>
 <script>
 export default {
-  // data() {
-  //   return {
-  //     items: [
-  //       {
-  //         name: "Boy's T-shirt",
-  //         image: require("../assets/images/products/product-2.jpg"),
-  //         price: 25,
-  //         quantity: 1,
+  data() {
+    return {
+      items: [
+        {
+          name: "Boy's T-shirt",
+          image: require("../assets/images/products/product-2.jpg"),
+          price: 25,
+          quantity: 1,
 
-  //       },
-  //       {
-  //         name: "Boy's T-shirt",
-  //         image: require("../assets/images/products/product-3.jpg"),
-  //         price: 40,
-  //         quantity: 1,
+        },
+        {
+          name: "Boy's T-shirt",
+          image: require("../assets/images/products/product-3.jpg"),
+          price: 40,
+          quantity: 1,
 
-  //       },
-  //       {
-  //         name: "Boy's T-shirt",
-  //         image: require("../assets/images/products/product-5.jpg"),
-  //         price: 60,
-  //         quantity: 1,
+        },
+        {
+          name: "Boy's T-shirt",
+          image: require("../assets/images/products/product-5.jpg"),
+          price: 60,
+          quantity: 1,
 
-  //       },
-  //       {
-  //         name: "Boy's T-shirt",
-  //         image: require("../assets/images/products/product-7.jpg"),
-  //         price: 25,
-  //         quantity: 1,
+        },
+        {
+          name: "Boy's T-shirt",
+          image: require("../assets/images/products/product-7.jpg"),
+          price: 25,
+          quantity: 1,
 
-  //       },
-  //     ]
-  //   };
-  // },
-  data: {
-    cartItem: ''
+        },
+      ]
+    };
   },
   computed: {
     totalAll() {
