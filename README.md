@@ -1,4 +1,6 @@
-First project on Vue
+First project on Vue: Multiple pages, Glide.js, Vuex, pagination, sorting, price calc
+
+![Image alt](https://github.com/Jan360/Dans-e-commerce-Vue/blob/main/Dans.png)
 
 ## Project setup
 ```
