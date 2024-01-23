@@ -1,4 +1,4 @@
-# Сеть магазинов Дионис
+First project on Vue
 
 ## Project setup
 ```
