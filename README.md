@@ -1,4 +1,4 @@
-# mercedes-benz
+# Сеть магазинов Дионис
 
 ## Project setup
 ```
