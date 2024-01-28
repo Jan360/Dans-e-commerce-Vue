@@ -187,7 +187,7 @@
       </div> -->
 
       <div class="product-center">
-        <Goods v-for="product in products.slice(0, 8)" :key="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
+        <Goods v-for="product in products.slice(0, 8)" :key="product.id" :id="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
       </div>
     </section>
 
@@ -294,7 +294,7 @@
       </div> -->
 
       <div class="product-center">
-        <Goods v-for="product in products.slice(0, 4)" :key="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
+        <Goods v-for="product in products.slice(0, 4)" :key="product.id" :id="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
       </div>
     </section>
 
@@ -325,7 +325,7 @@
 import Glide from '../components/Glide.vue'
 import Popup from '../components/Popup.vue'
 import Goods from '../components/Goods.vue'
-import { mapGetters } from 'vuex'; // Товары
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Main',
@@ -401,10 +401,22 @@ export default {
   //     ],
   //   };
   // },
+  methods: {
+    // async product() {
+    //   try {
+    //     const response = await fetch('https://example.com/products/');
+    //     const data = await response.json();
+    //     console.log(data);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
+  },
   // Товары
   computed: {
-    ...mapGetters(['products'])
+    ...mapGetters(['products']) // getters из products.js
   },
+  
 }
 </script>
 

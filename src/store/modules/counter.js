@@ -1,27 +1,26 @@
 const counter = {
   state: () => ({
-    clickCountCart: 0,
-    clickCountHeart: 0
+    clickCountCart: localStorage.getItem('clickCountCart') || 0,
+    clickCountHeart: localStorage.getItem('clickCountHeart') || 0
   }),
   mutations: {
-    incrementClickCart(state, product) {
+    incrementClickCart(state) {
       state.clickCountCart++;
-      // const product = state.products.find(p => p.id === productId);
-      localStorage.setItem('cartItem', JSON.stringify(product));
+      localStorage.setItem('clickCountCart', state.clickCountCart.toString());
     },
     incrementClickHeart(state) {
       state.clickCountHeart++;
+      localStorage.setItem('clickCountHeart', state.clickCountHeart.toString());
     },
   },
   actions: {
-    incrementClickCart(context, productId) {
-      context.commit('incrementClickCart', productId);
+    incrementClickCart(context) {
+      context.commit('incrementClickCart');
     },
     incrementClickHeart(context) {
       context.commit('incrementClickHeart');
     },
   },
-  
 };
 
 export default counter;

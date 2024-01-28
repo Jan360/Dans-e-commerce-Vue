@@ -1,4 +1,3 @@
-<!-- При нажатии на bx-cart товар должен вноситься Cart -->
 <template>
   <div class="product-item">
     <div class="overlay">
@@ -13,24 +12,32 @@
       <h4>${{ price }}</h4>
     </div>
     <ul class="icons">
-      <li><i class="bx bx-heart" @click="incrementClickHeart"></i></li>
+      <li><i class="bx bx-heart" @click="incrementClickHeart()"></i></li>
       <li><i class="bx bx-search"></i></li>
-      <li><i class="bx bx-cart" @click="incrementClickCart"></i></li>
+      <li><i class="bx bx-cart" @click="incrementClickCart(), product()"></i></li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions} from 'vuex';
 
 export default {
   name: 'Goods',
-  props: ['category', 'discount', 'title', 'price', 'image', 'link'],
+  props: ['id', 'category', 'discount', 'title', 'price', 'image', 'link'],
   methods: {
     ...mapActions(['incrementClickHeart', 'incrementClickCart']),
+    product() {
+      const items = JSON.parse(localStorage.getItem('items')) || []; // Получаем текущий массив объектов из localStorage или создаем новый пустой массив, если он не существует
+      const newItem = { id: this.id, name: this.title, price: this.price, image: this.image, quantity: 1 };
+      items.push(newItem);
+      localStorage.setItem('items', JSON.stringify(items))
+      console.log({id: this.id, name: this.title, price: this.price, image: this.image});
+    },
   },
 }
 </script>
+
 <!-- <script setup>
 defineProps({
       category: String,

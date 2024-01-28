@@ -15,7 +15,7 @@
     </div>
     <!-- products, sortedProducts -->
     <div class="product-center container">
-      <Goods v-for="product in paginatedProducts" :key="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
+      <Goods v-for="product in paginatedProducts" :key="product.id" :id="product.id" :category="product.category" :title="product.title" :price="product.price" :image="product.image" :discount="product.discount" :link="product.link" />
     </div>
   </section>
   <section class="pagination">
@@ -47,13 +47,13 @@ export default {
       switch (this.selectedSortingOption) {
         case '1': // Default Sorting
           return sortedArray;
-        case '2': // Sort By Price
+        case '2':
           return sortedArray.sort((a, b) => a.price - b.price);
-        case '3': // Sort By Popularity
+        case '3':
           return sortedArray.sort((a, b) => b.popularity - a.popularity);
-        case '4': // Sort By Sale
+        case '4':
           return sortedArray.sort((a, b) => b.sale - a.sale);
-        case '5': // Sort By Rating
+        case '5':
           return sortedArray.sort((a, b) => b.rating - a.rating);
         default:
           return sortedArray;
@@ -72,7 +72,16 @@ export default {
     goToPage(page) {
       this.currentPage = page;
     }
-  }
+  },
+  // async product() {
+    //   try {
+    //     const response = await fetch('https://example.com/products/');
+    //     const data = await response.json();
+    //     console.log(data);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
 }
 </script>
 

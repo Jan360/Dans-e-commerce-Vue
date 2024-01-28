@@ -1,4 +1,3 @@
-<!-- Товары должны выводить общую сумму -->
 <template>
     <div class="container cart">
       <table>
@@ -43,34 +42,34 @@ export default {
   data() {
     return {
       items: [
-        {
-          name: "Boy's T-shirt",
-          image: require("../assets/images/products/product-2.jpg"),
-          price: 25,
-          quantity: 1,
+        // {
+        //   name: "Boy's T-shirt",
+        //   image: require("../assets/images/products/product-2.jpg"),
+        //   price: 25,
+        //   quantity: 1,
 
-        },
-        {
-          name: "Boy's T-shirt",
-          image: require("../assets/images/products/product-3.jpg"),
-          price: 40,
-          quantity: 1,
+        // },
+        // {
+        //   name: "Boy's T-shirt",
+        //   image: require("../assets/images/products/product-3.jpg"),
+        //   price: 40,
+        //   quantity: 1,
 
-        },
-        {
-          name: "Boy's T-shirt",
-          image: require("../assets/images/products/product-5.jpg"),
-          price: 60,
-          quantity: 1,
+        // },
+        // {
+        //   name: "Boy's T-shirt",
+        //   image: require("../assets/images/products/product-5.jpg"),
+        //   price: 60,
+        //   quantity: 1,
 
-        },
-        {
-          name: "Boy's T-shirt",
-          image: require("../assets/images/products/product-7.jpg"),
-          price: 25,
-          quantity: 1,
+        // },
+        // {
+        //   name: "Boy's T-shirt",
+        //   image: require("../assets/images/products/product-7.jpg"),
+        //   price: 25,
+        //   quantity: 1,
 
-        },
+        // },
       ]
     };
   },
@@ -84,21 +83,15 @@ export default {
   methods: {
     removeItem(index) {
       this.items.splice(index, 1);
+      localStorage.setItem('items', JSON.stringify(this.items));
     },
-    // updateTotal() {
-    //   const cartItem = localStorage.getItem("cartItem");
-    // },
   },
-  // mounted() {
-  //   if (localStorage.product) {
-  //     this.product = JSON.parse(localStorage.getItem("product"));
-  //   }
-  // },
-  // watch: {
-  //   name(newName) {
-  //     localStorage.name = newName;
-  //   }
-  // }
+  mounted() {
+    const storedItems = JSON.parse(localStorage.getItem('items'));
+    if (storedItems) {
+      this.items = storedItems;
+    }
+  },
 }
 </script>
 
